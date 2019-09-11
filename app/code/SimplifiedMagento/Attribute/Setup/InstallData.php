@@ -38,6 +38,7 @@ class InstallData implements InstallDataInterface
             [
                 'group'=>'Content',
                 'type'=>'text',
+                'backend'=>\SimplifiedMagento\Attribute\Model\Config\Validation::class,
                 'global'=>\Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
                 'visible'=>true,
                 'required'=>true,
@@ -60,7 +61,7 @@ class InstallData implements InstallDataInterface
                 'searchable'=>false,
                 'used_in_product_listing'=>true,
                 'label'=>'Member Type',
-                'input'=>'select',
+                'input'=>'select', 
                 'source'=>\SimplifiedMagento\Attribute\Model\Config\Options::class,
             ]
         );
