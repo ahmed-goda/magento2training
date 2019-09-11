@@ -139,6 +139,7 @@ return [
         'Magento_Wishlist' => 1,
         'Magento_WishlistAnalytics' => 1,
         'Magento_WishlistSampleData' => 1,
+        'SimplifiedMagento_Attribute' => 1,
         'SimplifiedMagento_Database' => 1,
         'SimplifiedMagento_FirstModule' => 1,
         'SimplifiedMagento_RequestFlow' => 1,
