@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="SimplifiedMagento\FirstModule\Api\PencilInterface" 
+        type="SimplifiedMagento\FirstModule\Model\Pencil"/>
+    
+    <preference for="SimplifiedMagento\FirstModule\Api\ColorInterface" 
+        type="SimplifiedMagento\FirstModule\Model\YellowColor"/>
+    
+    <preference for="SimplifiedMagento\FirstModule\Api\SizeInterface" 
+        type="SimplifiedMagento\FirstModule\Model\NormalSize"/>
+
+    <preference for="Magento\Catalog\Api\ProductRepositoryInterface" 
+        type="SimplifiedMagento\FirstModule\Model\CustomImplementation"/>
+
+
+    <type name="SimplifiedMagento\FirstModule\Model\Pencil">
+        <arguments>
+            <argument name="color" xsi:type="object">virtualType</argument>
+            <argument name="size" xsi:type="object">SimplifiedMagento\FirstModule\Model\SmallSize</argument>
+        </arguments>
+    </type>
+
+    <type name="SimplifiedMagento\FirstModule\Model\Student">
+        <arguments>
+            <argument name="name" xsi:type="string">Bob</argument>
+            <argument name="age" xsi:type="number">40</argument>
+            <argument name="scores" xsi:type="array">
+                <item name="maths" xsi:type="number">30</item>
+                <item name="science" xsi:type="number">55</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <preference for="SimplifiedMagento\FirstModule\Api\BrightnessInterface" 
+        type="SimplifiedMagento\FirstModule\Model\MediumBrightness"/>
+
+    <virtualType name="virtualType" type="SimplifiedMagento\FirstModule\Model\YellowColor">
+        <arguments>
+            <argument name="brightness" xsi:type="object">SimplifiedMagento\FirstModule\Model\LowBrightness</argument>
+        </arguments>
+    </virtualType>
+    
+    <type name="Magento\Catalog\Model\Product">
+        <plugin name="before_set_name"
+            type="SimplifiedMagento\FirstModule\Plugin\PluginSolution"
+            sortOrder="10"
+            disabled="true"/>
+    </type>
+    
+    <type name="SimplifiedMagento\FirstModule\Controller\Page\HelloWorld">
+        <plugin name="plugin_on_execute"
+            type="SimplifiedMagento\FirstModule\Plugin\PluginSolution"
+            sortOrder="10"
+            disabled="true"/>
+        <plugin name="plugin2_on_execute"
+            type="SimplifiedMagento\FirstModule\Plugin\PluginSolution2"
+            sortOrder="20"
+            disabled="true"/>
+        <plugin name="plugin3_on_execute"
+            type="SimplifiedMagento\FirstModule\Plugin\PluginSolution3"
+            sortOrder="30"
+            disabled="true"/>
+
+        <arguments>
+            <argument name="heavyService" xsi:type="object">SimplifiedMagento\FirstModule\Model\HeavyService\Proxy</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="hello_world" xsi:type="object">SimplifiedMagento\FirstModule\Console\Command\HelloWorld</item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>
