@@ -40,7 +40,7 @@ class Index extends Action
 
         $collection = $affiliateMember->getCollection()
             ->addFieldToSelect(['name'])
-            ->addFieldToFilter('status', 1);
+            ->addFieldToFilter('status', 0);
         foreach ($collection as $key => $row) {
             print_r($row->getData());
             echo '<br>';
