@@ -85,4 +85,18 @@ interface AffiliateMemberInterface
      * @return \SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface
      */
     public function setPhoneNumber(string $phone_number);
+    
+    /**
+     *
+     * @return \SimplifiedMagento\Database\Api\Data\AffiliateMemberExtensionInterface|null
+     */
+    public function getExtensionAttributes();
+    
+    /**
+     *
+     * @param \SimplifiedMagento\Database\Api\Data\AffiliateMemberExtensionInterface $affiliateMemberExtension
+     * 
+     * @return $this
+     */
+    public function setExtensionAttributes(\SimplifiedMagento\Database\Api\Data\AffiliateMemberExtensionInterface $affiliateMemberExtension);
 }

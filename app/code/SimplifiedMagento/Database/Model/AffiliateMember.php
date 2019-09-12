@@ -2,11 +2,11 @@
 
 namespace SimplifiedMagento\Database\Model;
 
-use Magento\Framework\Model\AbstractModel;
+use Magento\Framework\Model\AbstractExtensibleModel;
 use SimplifiedMagento\Database\Model\ResourceModel\AffiliateMember as AffiliateMemberResource;
 use SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface;
 
-class AffiliateMember extends AbstractModel implements AffiliateMemberInterface
+class AffiliateMember extends AbstractExtensibleModel implements AffiliateMemberInterface
 {
 
     /**
@@ -114,5 +114,25 @@ class AffiliateMember extends AbstractModel implements AffiliateMemberInterface
     public function setPhoneNumber(string $phone_number)
     {
         return $this->setData(AffiliateMemberInterface::PHONE_NUMBER, $phone_number);
+    }
+
+    /**
+     *
+     * @return \SimplifiedMagento\Database\Api\Data\AffiliateMemberExtensionInterface|null
+     */
+    public function getExtensionAttributes()
+    {
+        return $this->_getExtensionAttributes();
+    }
+    
+    /**
+     *
+     * @param \SimplifiedMagento\Database\Api\Data\AffiliateMemberExtensionInterface $affiliateMemberExtension
+     * 
+     * @return $this
+     */
+    public function setExtensionAttributes(\SimplifiedMagento\Database\Api\Data\AffiliateMemberExtensionInterface $affiliateMemberExtension)
+    {
+        return $this->_setExtensionAttributes($affiliateMemberExtension);
     }
 }
