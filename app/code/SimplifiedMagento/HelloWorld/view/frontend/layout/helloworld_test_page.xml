@@ -9,7 +9,15 @@
     <body>
         <referenceContainer name="content">
             <block class="SimplifiedMagento\HelloWorld\Block\HelloWorld" name="hello_world"
-                template="SimplifiedMagento_HelloWorld::custom.phtml"/>
+                template="SimplifiedMagento_HelloWorld::custom.phtml">
+                <arguments>
+                    <argument name="show_hello" xsi:type="string">Hello From Layout To Template</argument>
+                    <argument name="show_array" xsi:type="array">
+                        <item name="first" xsi:type="string">First Element From Layout.</item>
+                        <item name="second" xsi:type="string">Second Element From Layout.</item>
+                    </argument>
+                </arguments>
+            </block>
         </referenceContainer>
     </body>
 </page>
