@@ -1,1 +1,12 @@
-<h1>Hi From My First Custom Module</h1>
+<?php
+    $message_from_block = $block->getHelloWorld();
+    $array_from_template = $block->gendArrayToTemplate();
+?>
+
+<h1> <?php echo $message_from_block;?> </h1>
+
+<?php foreach ($array_from_template as $element): ?>
+    <ul>
+        <li><?php echo $element; ?></li>
+    </ul>
+<?php endforeach; ?>
