@@ -1,7 +1,10 @@
 <?php
     $message_from_block = $block->getHelloWorld();
-    $array_from_template = $block->gendArrayToTemplate();
+    $array_from_template = $block->getArrayToTemplate();
+    $productNameFromCustomBlock = $block->getProductName();
 ?>
+
+<h1> <?php echo $productNameFromCustomBlock . ' "From The Custom Block". ';?> </h1>
 
 <h1> <?php echo $message_from_block;?> </h1>
 
