@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: liyassoladogun
- * Date: 1/24/19
- * Time: 10:04 AM
- */
 
 namespace SimplifiedMagento\CustomAdmin\Ui\Component\Listing\Column;
 use Magento\Framework\View\Element\UiComponentFactory;

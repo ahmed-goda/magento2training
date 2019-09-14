@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: liyassoladogun
- * Date: 2/10/19
- * Time: 8:09 AM
- */
 
 namespace SimplifiedMagento\CustomAdmin\Controller\Adminhtml\Member;
 
