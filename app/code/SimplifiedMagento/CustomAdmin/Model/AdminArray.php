@@ -1,15 +1,23 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: liyassoladogun
+ * Date: 1/20/19
+ * Time: 12:21 AM
+ */
 
 namespace SimplifiedMagento\CustomAdmin\Model;
+
 
 use Magento\Framework\Option\ArrayInterface;
 
 class AdminArray implements ArrayInterface
 {
+
     /**
-     * Returns Array of option as value-label pairs
+     * Return array of options as value-label pairs
      *
-     * @return array
+     * @return array Format: array(array('value' => '<value>', 'label' => '<label>'), ...)
      */
     public function toOptionArray()
     {
@@ -17,7 +25,7 @@ class AdminArray implements ArrayInterface
             ['value' => 0, 'label' => __('First')],
             ['value' => 1, 'label' => __('Second')],
             ['value' => 2, 'label' => __('Third')],
-            ['value' => 3, 'label' => __('Forth')],
+            ['value' => 3, 'label' => __('Fourth')]
         ];
     }
 }

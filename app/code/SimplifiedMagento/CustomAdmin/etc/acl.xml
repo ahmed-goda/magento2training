@@ -10,9 +10,8 @@
         <resources>
             <resource id="Magento_Backend::admin">
                 <resource id="SimplifiedMagento_CustomAdmin::parent" title="Custom Admin Parent"
-                    translate="title" sortOrder="30">
-                    <resource id="SimplifiedMagento_CustomAdmin::first_child" title="First Child"
-                        translate="title" sortOrder="10"/>
+                          translate="title" sortOrder="30">
+                    <resource id="SimplifiedMagento_CustomAdmin::firstchild" title="First Child" translate="title" sortOrder="10"/>
                 </resource>
             </resource>
         </resources>
