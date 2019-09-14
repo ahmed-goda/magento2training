@@ -40,7 +40,7 @@ class InlineEdit extends Action
                     $model = $this->affiliateMember->load($modelId);
                     try {
                         $model->setData(array_merge($model->getData(), $postItems[$modelId]));
-                        $model->save();c
+                        $model->save();
 
                     } catch (\Exception $e) {
                         $message[] = $e->getMessage();
