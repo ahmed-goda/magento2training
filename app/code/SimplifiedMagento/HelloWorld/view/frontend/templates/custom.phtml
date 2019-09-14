@@ -1,18 +1,25 @@
 <?php
-    $message_from_block = $block->getHelloWorld();
-    $array_from_template = $block->getArrayToTemplate();
-    $productNameFromCustomBlock = $block->getProductName();
+    // $message_from_block = $block->getHelloWorld();
+    // $array_from_template = $block->getArrayToTemplate();
+    // $productNameFromCustomBlock = $block->getProductName();
+
+    $viewModel = $block->getData('view_model');
+    $messageFromViewModel = $viewModel->getHelloWorld();
+    $arrayToTemplateFromViewModel = $viewModel->getArrayToTemplate();
+    $productNameFromViewModel = $viewModel->getProductName();
 ?>
 
-<h1> <?php echo $productNameFromCustomBlock . ' "From The Custom Block". ';?> </h1>
+<!-- <h1> <?php // echo $productNameFromCustomBlock . ' "From The Custom Block". ';?> </h1> -->
+<h1> <?php echo $productNameFromViewModel . ' "From The View Model". ';?> </h1>
 
-<h1> <?php echo $message_from_block;?> </h1>
+<!-- <h1> <?php // echo $message_from_block;?> </h1> -->
+<h1> <?php echo $messageFromViewModel;?> </h1>
 
-<?php foreach ($array_from_template as $element): ?>
+<?php foreach ($arrayToTemplateFromViewModel as $element): ?>
     <ul>
         <li><?php echo $element; ?></li>
     </ul>
 <?php endforeach; ?>
 
-<h1> <?php echo $this->getShowHello();?> </h1>
-<h1> <?php print_r( $this->getShowArray() );?> </h1>
+<!-- <h1> <?php // echo $this->getShowHello();?> </h1> -->
+<!-- <h1> <?php // print_r( $this->getShowArray() );?> </h1> -->
